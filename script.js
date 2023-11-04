@@ -11,4 +11,35 @@ document.getElementById("formulario").addEventListener('submit', function(e){
 	};
 
 	//console.log(estudiante.apellido);
+
+	agregarTabla(estudiante);
 });
+
+function agregarTabla(estudiante){
+
+	var tbody = document.getElementById("cuerpoTabla");
+
+	var fila = document.createElement("tr");
+
+	for(var key in estudiante){
+		var td = document.createElement("td");
+		td.textContent = estudiante[key];
+		fila.appendChild(td);
+	}
+
+	var td = document.createElement("td");
+	var boton = document.createElement("button");
+	boton.textContent = "Eliminar";
+	boton.onclick = function(){
+		tbody.removeChild(fila);
+	}
+	td.appendChild(boton);
+	fila.appendChild(td);
+
+
+
+	tbody.appendChild(fila);
+
+
+
+}
