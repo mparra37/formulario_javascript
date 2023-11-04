@@ -30,6 +30,7 @@ function agregarTabla(estudiante){
 	var td = document.createElement("td");
 	var boton = document.createElement("button");
 	boton.textContent = "Eliminar";
+	boton.classList.add("btn", "btn-danger");
 	boton.onclick = function(){
 		tbody.removeChild(fila);
 	}
