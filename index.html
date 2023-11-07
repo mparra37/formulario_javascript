@@ -16,9 +16,9 @@
 		
 		<form id="formulario">
 			
-			<input class="form-control" type="text" id="titulo" placeholder="Título" required>
-			<input class="form-control" type="number" id="anio" placeholder="2000" min="2000" required>
-			<input class="form-control" type="number" id="duracion" placeholder="120m" required>
+			<input class="form-control" type="text" id="titulo" placeholder="Título" >
+			<input class="form-control" type="number" id="anio" placeholder="2000" min="1900" >
+			<input class="form-control" type="number" id="duracion" placeholder="120m" >
 			<select class="form-select" id="genero" name="Genero">
 				<option value="0" selected="selected">Selecciona un género</option>
 				<option value="comedia">Comedia</option>
@@ -27,8 +27,9 @@
 				<option value="musical">Musical</option>
 				<option value="accion">Acción</option>	
 			</select>
-			<input class="form-control" type="text" id="director" placeholder="Director" required>
-			<textarea class="form-control" id="Sinopsis" placeholder="sinopsis" rows="5"></textarea>
+			<input class="form-control" type="text" id="director" placeholder="Director" >
+			<textarea class="form-control" id="sinopsis" placeholder="sinopsis" rows="5"></textarea>
+			<button class="btn btn-primary" type="submit">Agregar Película</button>
 			
 		</form>
 	</div>
@@ -44,6 +45,8 @@
 				<td>Género</td>
 				<td>Director</td>
 				<td>Sinopsis</td>
+				<td>Eliminar</td>
+				<td>Editar</td>
 			</tr>
 		</thead>
 		<tbody id="cuerpoTabla">
