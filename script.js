@@ -10,9 +10,9 @@ document.getElementById("formulario").addEventListener('submit', function(e){
 		hobbies: document.getElementById("hobbies").value
 	};
 
-	//console.log(estudiante.apellido);
-
 	agregarTabla(estudiante);
+
+	e.target.reset();
 });
 
 function agregarTabla(estudiante){
