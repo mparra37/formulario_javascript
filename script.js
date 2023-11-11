@@ -1,3 +1,6 @@
+let contador_peliculas = 0;
+
+
 document.getElementById("formulario").addEventListener('submit', function(e){
 	//Previene que se refresque la página
 	e.preventDefault();
@@ -36,6 +39,10 @@ function agregarTabla(pelicula){
 	boton.classList.add("btn", "btn-danger");
 	boton.onclick = function(){
 		tbody.removeChild(fila);
+		contador_peliculas--;
+		document.querySelector("span").innerHTML = contador_peliculas;
+
+		
 	}
 	td.appendChild(boton);
 	fila.appendChild(td);
@@ -62,5 +69,21 @@ function agregarTabla(pelicula){
 	tbody.appendChild(fila);
 
 
+	contador_peliculas++;
+	document.querySelector("span").innerHTML = contador_peliculas;
 
 }
+
+
+document.getElementById("recomendar").addEventListener('click', function(e){
+	let cuerpo_tabla = document.getElementById("cuerpoTabla");
+	let filas = cuerpo_tabla.rows;
+	let aleatorio = Math.floor(Math.random() * filas.length);
+
+	let peli = filas[aleatorio].cells[0].textContent;
+
+	alert("Te recomiendo la película: " + peli);
+
+
+})
+
